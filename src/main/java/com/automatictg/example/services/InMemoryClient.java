@@ -1,7 +1,8 @@
-package com.automatictg.springBoot.services;
+package com.automatictg.example.services;
 
-import com.automatictg.springBoot.core.*;
-import com.automatictg.springBoot.services.*;
+import com.automatictg.example.core.*;
+import com.automatictg.example.services.*;
+
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.ArrayList;
@@ -17,12 +18,12 @@ public InMemoryClient() {
 	
 }
 @Override
-public List<Vehicle> printDetails(){
+public List<Vehicle> displayVehicleDetails(){
 	return list;
 }
 
 @Override
-public Vehicle printDetails(String registrationNumber) {
+public Vehicle displayVehicleDetails(String registrationNumber) {
 	Vehicle vehicle = null;
 	for(Vehicle details : list) {
 		if(details.getRegistrationNumber().equalsIgnoreCase(registrationNumber)) {
@@ -34,13 +35,13 @@ public Vehicle printDetails(String registrationNumber) {
 
 
 @Override
-public Vehicle addDetails(Vehicle vehicle) {
+public Vehicle saveVehicleDetails(Vehicle vehicle) {
 	list.add(vehicle);
 	return vehicle;
 	
 }
 @Override
-public Vehicle updateDetails(Vehicle vehicle,String registrationNumber) {
+public Vehicle updateVehicleDetails(Vehicle vehicle,String registrationNumber) {
 	for(Vehicle details : list)
 	{
 		if(details.getRegistrationNumber().equalsIgnoreCase(registrationNumber)) {
@@ -53,7 +54,7 @@ public Vehicle updateDetails(Vehicle vehicle,String registrationNumber) {
 }
 
 @Override
-public Vehicle deleteDetails(String registrationNumber) {
+public Vehicle deleteVehicleDetails(String registrationNumber) {
 	Vehicle vehicle = null;
 	for(Vehicle details : list) {
 		if(details.getRegistrationNumber().equalsIgnoreCase(registrationNumber)) {

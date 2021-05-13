@@ -1,4 +1,5 @@
-package com.automatictg.springBoot.core;
+package com.automatictg.example.core;
+
 
 public class Vehicle {
  private String registrationNumber;

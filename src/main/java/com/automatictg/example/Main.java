@@ -1,10 +1,11 @@
-package com.automatictg.springBoot;
+package com.automatictg.example;
 
 
 
-import com.automatictg.springBoot.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.automatictg.example.*;
 
 @SpringBootApplication
 public class Main {
