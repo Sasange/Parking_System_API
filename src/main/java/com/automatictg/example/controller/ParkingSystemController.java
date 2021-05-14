@@ -3,7 +3,7 @@ package com.automatictg.example.controller;
 import java.util.*;
 
 import com.automatictg.example.core.*;
-import com.automatictg.example.services.*;
+import com.automatictg.example.repository.*;
 
 import org.springframework.beans.factory.annotation.Autowire;
 import org.springframework.beans.factory.annotation.*;

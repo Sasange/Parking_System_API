@@ -1,7 +1,7 @@
-package com.automatictg.example.services;
+package com.automatictg.example.repository;
 
 import java.util.*;
-
+import org.springframework.data.repository.CrudRepository;
 import com.automatictg.example.core.*;
 
 public interface BaseClient {

@@ -1,8 +1,8 @@
-package com.automatictg.example.services;
+package com.automatictg.example.repository;
 
 import com.automatictg.example.core.*;
-import com.automatictg.example.services.*;
-
+import com.automatictg.example.repository.*;
+import java.util.Scanner;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.ArrayList;
@@ -10,12 +10,15 @@ import java.util.ArrayList;
 @Service
 public class InMemoryClient implements BaseClient {
 List<Vehicle> list;
-
+Scanner sc=new Scanner(System.in);
 public InMemoryClient() {
 	list=new ArrayList<>();
-	list.add(new Vehicle("mh49aa1234","white"));
-	list.add(new Vehicle("mh31ss7890","grey"));
-	
+//	list.add(new Vehicle("mh49aa1234","white"));
+//	list.add(new Vehicle("mh31ss7890","grey"));
+	   System.out.println("Enter vehicle registration Number");
+    String vehicleNumber = sc.nextLine();
+//    list.adlAll(vehicleNumber);
+    
 }
 @Override
 public List<Vehicle> displayVehicleDetails(){

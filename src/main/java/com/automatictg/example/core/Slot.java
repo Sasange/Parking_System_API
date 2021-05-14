@@ -1,13 +1,24 @@
 package com.automatictg.example.core;
 
+
 import java.util.ArrayList;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
 public class Slot {
-public static Vehicle[] parkingSlots;
-private Integer floorNumber;
-private Integer spaceOnEachFloor;
-private Integer capacity;
 
+  @Id
+  @GeneratedValue(strategy=GenerationType.AUTO)
+  private Long id;
+  public static Vehicle[] parkingSlots;
+  private Integer floorNumber;
+  private Integer spaceOnEachFloor;
+  private Integer capacity;
+  
+  protected Slot() {}
 
 
 public Slot(Integer floorNumber, Integer spaceOnEachFloor) {
@@ -49,7 +60,10 @@ public String toString() {
 			+ "]";
 }
 
-
-
-
+  
+  
+  
+  
+  
 }
+ 
