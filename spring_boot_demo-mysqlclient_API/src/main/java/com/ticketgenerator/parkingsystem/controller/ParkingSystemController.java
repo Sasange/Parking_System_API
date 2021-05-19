@@ -23,32 +23,23 @@ public class ParkingSystemController {
 
   //add vehicle info
   @PostMapping("/vehicles")
-  public HttpEntity<String> addVehicleInfoToDatabase(@RequestBody Vehicle vehicle){
-    try {
-      this.parkingSystemService.saveVehicleDetails(vehicle);
-      return new ResponseEntity<>(HttpStatus.OK);
-
-    } catch (Exception e){
-      return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-    }
+  public ResponseEntity<Vehicle> addVehicleDetails(@RequestBody Vehicle vehicle) {
+	  parkingSystemService.saveVehicleDetails(vehicle);
+		return new ResponseEntity<Vehicle>(vehicle, HttpStatus.OK);
   }
-
+  
+  
   //update vehicle info
-  @PutMapping("/vehicles")
-  public ResponseEntity<String> updateVehicleInfoInDatabase(@RequestBody Vehicle vehicle){
-    try {
-      this.parkingSystemService.updateVehicleDetails(vehicle);
-      return new ResponseEntity<>(HttpStatus.OK);
-    } catch (Exception e){
-    return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-    }
+  @PutMapping("/vehicles/{id}")
+	public Vehicle updateVehicleDetails(@PathVariable int id,@RequestBody Vehicle vehicle){
+		      Vehicle vehicle1=this.parkingSystemService.updateVehicleDetails(id,vehicle);
+		      return vehicle1;
   }
-
   //Delete vehicle info
-  @DeleteMapping("/vehicles/{regNo}")
-  public ResponseEntity<String> deleteVehicleInfoFromDatabase(@PathVariable String regNo){
+  @DeleteMapping("/vehicles/{id}")
+  public ResponseEntity<String> deleteVehicleInfoFromDatabase(@PathVariable int id){
     try {
-      this.parkingSystemService.deleteVehicleDetails(regNo);
+      this.parkingSystemService.deleteVehicleDetails(id);
       return new ResponseEntity<>(HttpStatus.OK);
     } catch (Exception e){
       return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);

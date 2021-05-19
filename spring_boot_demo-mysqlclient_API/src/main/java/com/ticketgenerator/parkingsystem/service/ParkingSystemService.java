@@ -9,7 +9,7 @@ public interface ParkingSystemService {
 
   Vehicle saveVehicleDetails(Vehicle vehicle);
 
-  Vehicle updateVehicleDetails(Vehicle vehicle);
+  Vehicle updateVehicleDetails(int id,Vehicle vehicle);
 
-  void deleteVehicleDetails(String regNo);
+  void deleteVehicleDetails(int id);
 }
